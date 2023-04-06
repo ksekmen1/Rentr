@@ -28,7 +28,28 @@ Vue.createApp({
             } catch(ex){
                 alert(ex.message)
             }
-        }
+        },
+        
+        async deleteItem(deleteId) {
+            const url = baseUrl + "/" + deleteId
+            try {
+                response = await axios.delete(url)
+                this.deleteMessage = response.status + " " + response.statusText
+                this.GetAllItems()
+            } catch (ex) {
+                alert(ex.message)
+            }
+        },
+
+        async addItem() {
+            try {
+                response = await axios.post(baseUrl, this.addData)
+                this.addMessage = "response " + response.status + " " + response.statusText
+                this.GetAllItems()
+            } catch (ex) {
+                alert(ex.message)
+            }
+        },
         
     },
 }).mount("#app")

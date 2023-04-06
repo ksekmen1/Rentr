@@ -35,7 +35,7 @@
         <br/>
         
         <ul class="list-group" id ="Itemlist" v.if="RentrItem.length">
-            <li v-for="Items in RentrItem">
+            <li class="list-group-item" v-for="Items in RentrItem">
                  Id: {{Items.id}} Produkt: {{Items.name}} Pris: {{Items.price}}Kr. Pr dag Antal: {{Items.quantity}}
             </li>
         </ul>

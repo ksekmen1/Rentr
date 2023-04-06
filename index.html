@@ -11,6 +11,7 @@
     <title>Rentr</title>
 </head>
 <body>
+  
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Rentr</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +26,22 @@
           </div>
         </div>
       </nav>
+
+      <div id="app">
+        <button id="getAllButton" v-on:click="GetAllItems" class="btn btn-primary">Get all items</button>
+        <br/>
+        <input v-model="nameToGetBy" placeholder="name" type="text"/>
+            <button v-on:click="GetByName(nameToGetBy)" class="btn btn-primary">Get by name</button>
+        <br/>
+        
+        <ul class="list-group" id ="Itemlist" v.if="RentrItem.length">
+            <li v-for="Items in RentrItem">
+                 Id: {{Items.id}} Produkt: {{Items.name}} Pris: {{Items.price}}Kr. Pr dag Antal: {{Items.quantity}}
+            </li>
+        </ul>
+      </div>
+
+
     
 
       <script src="index.js"></script>

@@ -1,4 +1,4 @@
-const baseUrl = "https://rentrapi20230406164054.azurewebsites.net/api/Rentritem"
+const baseUrl = "https://rentrapi100.azurewebsites.net/api/Rentritem"
 Vue.createApp({
     data() {
         return {
@@ -13,6 +13,7 @@ Vue.createApp({
         GetAllItems(){
             this.helperGetAndShow(baseUrl)
         },
+        
 
         GetByName(name){
             const url = baseUrl +"?name=" + name
